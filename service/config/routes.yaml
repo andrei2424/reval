@@ -1,0 +1,6 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+api_calculate:
+  path: /api/calculate
+  controller: App\Controller\CalculatorController::calculate
