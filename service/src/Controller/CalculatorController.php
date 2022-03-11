@@ -15,14 +15,14 @@ class CalculatorController
         $number1 = $parameters['number1'] ?? null;
         $number2 = $parameters['number2'] ?? null;
 
-        if (!$number1 || !$number2) {
+        if (is_numeric($number1) && is_numeric($number2)) {
             return new JsonResponse([
-                'message' => 'Incorrect request',
-            ], 400);
+                'result' => $number1 + $number2,
+            ]);
         }
 
         return new JsonResponse([
-            'result' => $number1 + $number2,
-        ]);
+            'message' => 'Incorrect request',
+        ], 400);
     }
 }
